@@ -1,0 +1,13 @@
+#defining routes when we press certain 
+spring:  cloud:    gateway:      routes:      - id: user-server
+        uri: lb://user-server
+        predicates: 
+          - Path=/user/** 
+      - id: contact-server
+        uri: lb://contact-server
+        predicates: 
+          - Path=/contact/**
+          
+        
+        
+      
